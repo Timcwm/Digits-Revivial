@@ -5,7 +5,7 @@ from tkinter import *
 from time import *
 
 
-class Number_circle:
+class NumberCircle:
     def __init__(self, position, number):
         self.position = position
         self.initial_value = number
@@ -47,14 +47,14 @@ class Number_circle:
         self.selected = False
 
 
-class Action_circle:
+class ActionCircle:
     def __init__(self, position, action):
         self.position = position
         self.selected = False
         self.action = action
 
     def get_x(self):
-        return (((self.position * 36) - 18) % 180)
+        return ((self.position * 36) - 18) % 180
 
     def get_y(self):
         return 20
@@ -148,7 +148,7 @@ class Digits:
 
     def generate_number_circles(self):
         for i in range(1, 7):
-            number_circle = Number_circle(i, self.numbers[i - 1])
+            number_circle = NumberCircle(i, self.numbers[i - 1])
             self.number_circles.append(number_circle)
 
     def draw_number_circles(self):
@@ -170,11 +170,11 @@ class Digits:
         self.numbers_display.update()
 
     def generate_actions_circles(self):
-        self.action_circles.append(Action_circle(1, "<="))
-        self.action_circles.append(Action_circle(2, "+"))
-        self.action_circles.append(Action_circle(3, "-"))
-        self.action_circles.append(Action_circle(4, "x"))
-        self.action_circles.append(Action_circle(5, "/"))
+        self.action_circles.append(ActionCircle(1, "<="))
+        self.action_circles.append(ActionCircle(2, "+"))
+        self.action_circles.append(ActionCircle(3, "-"))
+        self.action_circles.append(ActionCircle(4, "x"))
+        self.action_circles.append(ActionCircle(5, "/"))
 
     def draw_action_circles(self):
         self.actions_display.delete("all")
